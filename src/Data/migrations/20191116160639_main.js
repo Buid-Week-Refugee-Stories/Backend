@@ -7,7 +7,8 @@ exports.up = function (knex) {
             tbl.string('username', 100).notNullable().unique();
             tbl.string('password', 255).notNullable();
             tbl.string('avatar_image', 255);
-            tbl.string('origin', 50);
+            tbl.string('location', 50);
+            tbl.boolean('admin').notNullable().defaultTo(false);
             tbl.timestamp('created_at').defaultTo(knex.fn.now());
         })
         .createTable('stories', tbl => {
@@ -16,11 +17,14 @@ exports.up = function (knex) {
             // * KEV-VALUES 
             tbl.string('story_title', 255).notNullable();
             tbl.string('story_description', 255).notNullable();
+            tbl.boolean('approved_story').notNullable().defaultTo(false);
+            tbl.string('author', 100);
+            tbl.string('location', 50);
+            tbl.timestamp('created_at').defaultTo(knex.fn.now());
 
             // * FOREIGN KEY
             tbl.integer('story_id')
                 .unsigned()
-                .notNullable()
                 .references('id')
                 .inTable('users');
         })

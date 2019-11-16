@@ -4,7 +4,7 @@
   "description": "--- This will be the backend component for Refugees application.",
   "main": "index.js",
   "scripts": {
-    "dev": "nodemon ./src index.js"
+    "dev": "nodemon ./src/index.js"
   },
   "repository": {
     "type": "git",
