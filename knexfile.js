@@ -1,33 +1,31 @@
-// Update with your config settings.
-
 module.exports = {
 
   development: {
     client: 'sqlite3',
     useNullAsDefault: true,
     connection: {
-      filename: './src/Data/dbs/bw-refugees.db3'
+      filename: './src/Data/DataBases/bw-refugees.db3'
     },
     migrations: {
       directory: './src/Data/migrations',
     },
     seeds: {
       directory: './src/Data/seeds',
-    },
+    }
   },
 
   testing: {
     client: 'sqlite3',
     useNullAsDefault: true,
     connection: {
-      filename: './src/Data/dbs/test.db3'
+      filename: './src/Data/DataBases/test.db3'
     },
     migrations: {
       directory: './src/Data/migrations',
     },
     seeds: {
       directory: './src/Data/seeds',
-    },
+    }
   },
 
   production: {
@@ -38,7 +36,7 @@ module.exports = {
     },
     seeds: {
       directory: './src/Data/seeds',
-    },
+    }
   }
 
 };
