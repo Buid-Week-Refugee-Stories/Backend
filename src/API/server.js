@@ -3,8 +3,13 @@ const usersRouter = require('./Routes/users');
 const storiesRouter = require('./Routes/stories');
 const serverUtils = require('./Utils/serverUtils');
 const express = require('express');
+const documentation = require('./Utils/documentation');
 const server = express();
 server.use(serverUtils);
+
+// * ROUTES
+// TODO: THIS IS A TEMP DOCUMENTATION, IMPLEMENT SWAGGER AFTER PRIOITIZING API COMPLETION
+server.get('/', (req, res) => res.status(200).send(documentation));
 
 // * ROUTERS
 server.use('/users', usersRouter);
