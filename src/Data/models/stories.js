@@ -17,6 +17,12 @@ const getAll = async () => {
         stories
 }
 
+const update = async (id, updates) => {
+    await db('stories').where({ id }).update(updates)
+    return await db('stories').where({ id })
+};
+
 module.exports = {
-    getAll
+    getAll,
+    update
 }

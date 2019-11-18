@@ -29,7 +29,7 @@ router.post('/login', async (req, res) => {
             if (hashCompare(password, user.password)) {
                 res.status(200).json({
                     message: `Welcome ${user.username}!`,
-                    token: generateToken(user.username)
+                    token: generateToken(user)
                 });
             } else {
                 return res.status(401).json({ message: "Invalid Credentials" })

@@ -7,14 +7,14 @@ const add = async (user) => {
 }
 
 const booleanify = (user) => {
-    if (user.admin === 0 || '0') {
+    if (user.admin === 0 || user.admin === '0') {
         return {
             ...user,
             admin: false
         }
     };
 
-    if (user.admin === 1 || '1') {
+    if (user.admin === 1 || user.admin === '1') {
         return {
             ...user,
             admin: true

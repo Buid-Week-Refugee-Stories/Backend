@@ -1,3 +1,4 @@
+const { hashPassword } = require('../../API/Routes/Auth/Utils/hash');
 
 exports.seed = function (knex) {
   // Deletes ALL existing entries
@@ -9,20 +10,23 @@ exports.seed = function (knex) {
         {
           id: 1,
           username: 'Richard',
-          password: 'test',
-          location: 'USA'
+          password: hashPassword('test'),
+          location: 'USA',
+          admin: true
         },
         {
           id: 2,
           username: 'Chanice',
-          password: 'test',
-          location: 'Germany'
+          password: hashPassword('test'),
+          location: 'Germany',
+          admin: false
         },
         {
           id: 3,
           username: 'Jonathan',
-          password: 'test',
-          location: 'Taiwan'
+          password: hashPassword('test'),
+          location: 'Taiwan',
+          admin: false
         }
       ]);
     });

@@ -8,7 +8,8 @@ const decode = (request, requireAuth = true) => {
     if (header) {
         const token = header.replace('Bearer ', '')
         const decoded = jwt.verify(token, process.env.JWT_SECRET)
-        return decoded.username
+        const { admin, username } = decoded;
+        return { admin, username };
     }
 
     if (requireAuth) {
