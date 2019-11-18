@@ -1,30 +1,32 @@
+const { hashPassword } = require('../../API/Routes/Auth/Utils/hash');
 
 exports.seed = function (knex) {
   // Deletes ALL existing entries
-  return knex('users').del()
+  return knex('users')
+    .truncate()
     .then(function () {
       // Inserts seed entries
       return knex('users').insert([
         {
           id: 1,
           username: 'Richard',
-          password: 'test',
+          password: hashPassword('test'),
           location: 'USA',
-          avatar_image: ''
+          admin: true
         },
         {
           id: 2,
           username: 'Chanice',
-          password: 'test',
+          password: hashPassword('test'),
           location: 'Germany',
-          avatar_image: ''
+          admin: false
         },
         {
           id: 3,
           username: 'Jonathan',
-          password: 'test',
+          password: hashPassword('test'),
           location: 'Taiwan',
-          avatar_image: ''
+          admin: false
         }
       ]);
     });
