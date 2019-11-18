@@ -22,12 +22,6 @@ exports.up = function (knex) {
             tbl.string('avatar_image', 255).defaultTo('https://source.unsplash.com/random/500x550/?people');
             tbl.string('refugee_location_img', 255).defaultTo('https://source.unsplash.com/random/1440x600/?landscape');
             tbl.timestamp('created_at').defaultTo(knex.fn.now());
-
-            // * FOREIGN KEY
-            tbl.integer('story_id')
-                .unsigned()
-                .references('id')
-                .inTable('users');
         })
 };
 
