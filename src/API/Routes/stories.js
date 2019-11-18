@@ -12,6 +12,15 @@ router.get('/', (req, res) => {
         }))
 })
 
+router.delete('/:id', (req, res) => {
+    const { id } = req.params;
+
+    (!!decode(req) === true && decode(req).admin === true)
+        && Stories.remove(id)
+            .then(story => res.status(200).json(story))
+            .catch(err => res.status(500).json(err))
+})
+
 router.put('/:id', (req, res) => {
     const { id } = req.params;
     const changes = req.body;
