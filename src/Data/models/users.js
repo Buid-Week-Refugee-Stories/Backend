@@ -44,7 +44,7 @@ const getAll = async () => {
 
     return !!users === true &&
         users.length > 0 &&
-        users
+        users.map(user => booleanify(user))
 }
 
 module.exports = {
