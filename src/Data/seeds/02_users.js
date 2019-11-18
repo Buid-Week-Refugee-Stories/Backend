@@ -10,22 +10,19 @@ exports.seed = function (knex) {
           id: 1,
           username: 'Richard',
           password: 'test',
-          location: 'USA',
-          avatar_image: ''
+          location: 'USA'
         },
         {
           id: 2,
           username: 'Chanice',
           password: 'test',
-          location: 'Germany',
-          avatar_image: ''
+          location: 'Germany'
         },
         {
           id: 3,
           username: 'Jonathan',
           password: 'test',
-          location: 'Taiwan',
-          avatar_image: ''
+          location: 'Taiwan'
         }
       ]);
     });

@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./src/index.js",
-    "start": "node ./src/index.js"
+    "start": "node ./src/index.js",
+    "k-migrate": "knex migrate:down 20191116160639_main.js && knex migrate:up 20191116160639_main.js && knex seed:run"
   },
   "repository": {
     "type": "git",
