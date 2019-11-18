@@ -1,6 +1,7 @@
 // * PKS & SETTINGS
 const usersRouter = require('./Routes/users');
 const storiesRouter = require('./Routes/stories');
+const authRouter = require('./Routes/Auth/auth');
 const serverUtils = require('./Utils/serverUtils');
 const express = require('express');
 const documentation = require('./Utils/documentation');
@@ -12,6 +13,7 @@ server.use(serverUtils);
 server.get('/', (req, res) => res.status(200).send(documentation));
 
 // * ROUTERS
+server.use('/auth', authRouter);
 server.use('/users', usersRouter);
 server.use('/stories', storiesRouter);
 
