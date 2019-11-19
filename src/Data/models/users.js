@@ -45,6 +45,8 @@ const getAll = async () => {
             'users.created_at'
         )
 
+    if (process.env.DATABASE_URL && !!users === true && users.length > 0) users
+
     return !!users === true &&
         users.length > 0 &&
         users.map(user => booleanify(user))

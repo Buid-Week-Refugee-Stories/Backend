@@ -2,7 +2,7 @@ const db = require('../dbConfig');
 
 const booleanify = (story) => {
 
-    if (user.approved_story === true || user.approved_story === false) story;
+    if (story.approved_story === true || story.approved_story === false) story;
 
     if (story.approved_story === 0 || story.approved_story === '0') {
         return {
@@ -34,6 +34,8 @@ const getAll = async () => {
             'stories.refugee_location_img',
             'stories.created_at',
         )
+
+    if (process.env.DATABASE_URL && !!stories === true && stories.length > 0) stories
 
     return !!stories === true &&
         stories.length > 0 &&
