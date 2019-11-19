@@ -27,6 +27,8 @@ const getAll = async () => {
             'stories.approved_story',
             'stories.author',
             'stories.location',
+            'stories.avatar_image',
+            'stories.refugee_location_img',
             'stories.created_at',
         )
 
