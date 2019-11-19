@@ -7,6 +7,7 @@ const { generateToken } = require('./Utils/generateToken');
 router.post('/register', (req, res) => {
     let user = req.body;
     const infoExist = !!user.username === true && !!user.password === true;
+    console.log(user, inforExist)
 
     if (infoExist) {
         user.password = hashPassword(user.password);
@@ -21,8 +22,9 @@ router.post('/register', (req, res) => {
     }
 })
 
-router.post('/login', async (req, res) => {
+router.post('/login', (req, res) => {
     let { username, password } = req.body;
+    console.log(username, password, req.body);
 
     Users.findBy({ username })
         .then(user => {
