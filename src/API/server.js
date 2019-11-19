@@ -10,7 +10,7 @@ server.use(serverUtils);
 
 // * ROUTES
 // TODO: THIS IS A TEMP DOCUMENTATION, IMPLEMENT SWAGGER AFTER PRIOITIZING API COMPLETION
-server.get('/', (req, res) => res.status(200).send(documentation));
+server.get('/', (req, res) => res.status(200).redirect('https://documenter.getpostman.com/view/9207128/SW7Z495x?version=latest'));
 
 // * ROUTERS
 server.use('/auth', authRouter);

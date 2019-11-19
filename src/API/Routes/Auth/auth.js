@@ -35,7 +35,10 @@ router.post('/login', async (req, res) => {
                 return res.status(401).json({ message: "Invalid Credentials" })
             };
         })
-        .catch(error => res.status(500).json(error))
+        .catch(err => res.status(500).json({
+            err,
+            req: req.body
+        }))
 })
 
 module.exports = router;
