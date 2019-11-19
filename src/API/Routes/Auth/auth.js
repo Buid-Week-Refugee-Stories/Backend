@@ -8,6 +8,7 @@ router.post('/register', (req, res) => {
     let user = req.body;
     const infoExist = !!user.username === true && !!user.password === true;
     console.log(user, inforExist)
+    console.log('MAY NEED TO DO SOME REQ ERROR HANDLING', req, res)
 
     if (infoExist) {
         user.password = hashPassword(user.password);
@@ -24,7 +25,8 @@ router.post('/register', (req, res) => {
 
 router.post('/login', (req, res) => {
     let { username, password } = req.body;
-    console.log(username, password, req.body);
+    console.log(username, password);
+    console.log('MAY NEED TO DO SOME REQ ERROR HANDLING', req, res)
 
     Users.findBy({ username })
         .then(user => {
