@@ -1,5 +1,10 @@
 const db = require('../dbConfig');
 
+const add = async (story) => {
+    const [id] = await db('stories').insert(story);
+    return await findById(id);
+}
+
 const booleanify = (story) => {
 
     if (story.approved_story === true || story.approved_story === false) story;
@@ -53,6 +58,7 @@ const update = async (id, updates) => {
 };
 
 module.exports = {
+    add,
     getAll,
     remove,
     update
