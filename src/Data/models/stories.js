@@ -2,7 +2,7 @@ const db = require('../dbConfig');
 
 const add = async (story) => {
     const [id] = await db('stories').insert(story, 'id');
-    return await findById(id);
+    return findById(id);
 }
 
 const booleanify = (story) => {
@@ -48,13 +48,13 @@ const getAll = async () => {
 };
 
 const remove = async (id) => {
-    await db('stories').where({ id }).delete()
-    return await db('stories')
+    await db('stories').where({ id }).delete();
+    return db('stories');
 };
 
 const update = async (id, updates) => {
     await db('stories').where({ id }).update(updates)
-    return await findById(id)
+    return findById(id);
 };
 
 module.exports = {

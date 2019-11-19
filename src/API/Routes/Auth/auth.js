@@ -7,7 +7,7 @@ const { generateToken } = require('./Utils/generateToken');
 router.post('/register', (req, res) => {
     let user = req.body;
     const infoExist = !!user.username === true && !!user.password === true;
-    console.log(user, inforExist)
+    console.log(user, infoExist)
     console.log('MAY NEED TO DO SOME REQ ERROR HANDLING', req, res)
 
     if (infoExist) {
