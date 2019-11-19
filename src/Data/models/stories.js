@@ -1,6 +1,9 @@
 const db = require('../dbConfig');
 
 const booleanify = (story) => {
+
+    if (user.approved_story === true || user.approved_story === false) story;
+
     if (story.approved_story === 0 || story.approved_story === '0') {
         return {
             ...story,

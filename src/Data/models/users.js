@@ -7,6 +7,9 @@ const add = async (user) => {
 }
 
 const booleanify = (user) => {
+
+    if (user.admin === true || user.admin === false) user;
+
     if (user.admin === 0 || user.admin === '0') {
         return {
             ...user,
