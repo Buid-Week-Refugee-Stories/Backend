@@ -23,17 +23,17 @@ const findById = (id) => db('stories').where({ id });
 
 const getAll = async () => {
     const stories = await db('stories')
-        // .select(
-        //     'stories.id',
-        //     'stories.story_title',
-        //     'stories.story_description',
-        //     'stories.approved_story',
-        //     'stories.author',
-        //     'stories.location',
-        //     'stories.avatar_image',
-        //     'stories.refugee_location_img',
-        //     'stories.created_at',
-        // )
+        .select(
+            'stories.id',
+            'stories.story_title',
+            'stories.story_description',
+            'stories.approved_story',
+            'stories.author',
+            'stories.location',
+            'stories.avatar_image',
+            'stories.refugee_location_img',
+            'stories.created_at',
+        )
 
     if (process.env.DATABASE_URL && !!stories === true && stories.length > 0) stories
 
