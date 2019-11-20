@@ -5,8 +5,6 @@ const router = require('express').Router();
 // * ROUTES
 router.post('/', (req, res) => {
     const story = req.body;
-    console.log(req, res)
-    console.log(story)
 
     Stories.add(story)
         .then(newStory => res.status(201).json(newStory))
@@ -17,7 +15,6 @@ router.post('/', (req, res) => {
 })
 
 router.get('/', (req, res) => {
-    console.log(req, res)
     Stories.getAll()
         .then(storyList => res.status(200).json(storyList))
         .catch(err => res.status(500).json({
