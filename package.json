@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon ./src/index.js",
+    "test": "cross-env DB_ENV=testing jest --watchAll",
     "start": "node ./src/index.js",
     "k-migrate": "knex migrate:down 20191116160639_main.js && knex migrate:up 20191116160639_main.js && knex seed:run"
   },
